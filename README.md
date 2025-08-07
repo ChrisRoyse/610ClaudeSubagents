@@ -1,4 +1,3 @@
-# Claude-Flow Swarm Automation Framework
 ## 600+ Enterprise AI Agents for Unlimited Possibilities
 
 > Transform your workflow with the most comprehensive AI agent ecosystem ever created. Deploy intelligent swarms that work in parallel, automate complex tasks, and unlock capabilities you never thought possible—all without writing a single line of code.
