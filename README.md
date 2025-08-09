@@ -1642,6 +1642,27 @@ Once you have the agents set up, you can use them with Claude Code:
 4. **Combine Agents**: Mix and match for comprehensive solutions
 5. **Save Templates**: Create reusable prompt templates for common tasks
 
+### Advanced Setup: Optimize Claude-Flow Features
+
+```bash
+# Step 4: Analyze Claude-Flow capabilities
+npx claude-flow --help
+```
+
+**Tell Claude Code to:**
+1. Review the `npx claude-flow --help` output thoroughly
+2. Analyze and identify the pros and cons of each mode:
+   - **Hive-mind** features
+   - **Automation** capabilities  
+   - **Swarm** orchestration patterns
+3. Create a comprehensive report on best practices for utilizing all different modes
+4. Save this analysis to `flowstrats.md` in the root directory
+
+**Important**: When spawning swarms, always include in your prompt:
+> "Please read and reference the flowstrats.md file for optimal claude-flow utilization strategies"
+
+This ensures your swarms leverage the full potential of the framework's capabilities.
+
 ---
 
 ## 🔧 Advanced Features
@@ -1665,17 +1686,6 @@ Once you have the agents set up, you can use them with Claude Code:
 
 ---
 
-## 📚 Resources
-
-### Community
-- Discord: [Join our community](https://discord.gg/claude-flow)
-
-### Support
-- GitHub Issues: [Report bugs or request features](https://github.com/claude-flow/issues)
-- Email: support@claude-flow.ai
-- Documentation: [https://docs.claude-flow.ai](https://docs.claude-flow.ai)
-
----
 
 ## 🚀 Start Your Swarm Revolution Today
 
