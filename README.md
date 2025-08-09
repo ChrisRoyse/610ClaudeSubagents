@@ -1609,17 +1609,29 @@ Agent 5 will synthesize all findings into actionable recommendations"
 
 ## 🎯 Getting Started
 
-### Quick Start Commands
+### Quick Setup (3 Steps)
 
 ```bash
-# Basic agent deployment
-claude-flow "Analyze my competitors and create a differentiation strategy"
+# Step 1: Initialize Claude-Flow framework
+npx claude-flow@alpha init --force
 
-# Parallel swarm execution
-claude-flow --parallel "Research market trends" "Analyze competitors" "Predict customer needs"
+# Step 2: Copy all 600+ agents to your agents folder
+# Download agents from this repository and copy them to your local agents/ directory
 
-# Complex orchestration
-claude-flow --orchestrate "Create a complete digital transformation plan for my retail business"
+# Step 3: Start using agents with Claude Code
+# Open Claude Code and start prompting with your agents
+```
+
+### Example Agent Usage
+
+Once you have the agents set up, you can use them with Claude Code:
+
+```
+"Use the market-user-research agent to analyze the sustainable fashion market for Gen Z consumers"
+
+"Deploy a swarm with competitor-analysis-simulation-agent, consumer-insights-synthesizer, and trend-detection-extrapolation to research the electric vehicle market"
+
+"Use the business-growth-scaling-agent to create a complete digital transformation plan for my retail business"
 ```
 
 ### Best Practices for New Users
