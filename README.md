@@ -1655,15 +1655,8 @@ claude-flow --orchestrate "Create a complete digital transformation plan for my 
 
 ## 📚 Resources
 
-### Documentation
-- Full agent documentation: `/docs/agents/`
-- Prompt engineering guide: `/docs/prompts/`
-- Swarm patterns: `/docs/patterns/`
-
 ### Community
 - Discord: [Join our community](https://discord.gg/claude-flow)
-- Examples: `/examples/`
-- Templates: `/templates/`
 
 ### Support
 - GitHub Issues: [Report bugs or request features](https://github.com/claude-flow/issues)
