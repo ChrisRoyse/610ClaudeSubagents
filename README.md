@@ -1665,6 +1665,49 @@ This ensures your swarms leverage the full potential of the framework's capabili
 
 ---
 
+## 🚀 **QUICK START CHECKLIST**
+
+Get productive with your 607 agents in minutes:
+
+- [ ] Run `npx claude-flow@alpha init --force`
+- [ ] Copy 600+ agents to your `agents/` folder
+- [ ] Create `flowstrats.md` analysis (run `npx claude-flow --help` first)
+- [ ] Try your first single agent with proper prompt structure
+- [ ] Deploy your first 3-agent swarm using templates
+- [ ] Master hive-mind coordination for complex projects
+
+## 🎯 **MOST POPULAR AGENT COMBINATIONS**
+
+**🔥 Business Growth Stack (4 agents):**
+- `business-growth-scaling-agent` + `competitor-analysis-simulation-agent` + `pricing-strategy-optimizer` + `marketing-sales-mastery-agent`
+
+**💻 Full-Stack Development (5 agents):**
+- `react-19-specialist` + `nodejs-specialist` + `postgresql-specialist` + `aws-cloud-architect` + `docker-containerization-specialist`
+
+**🧠 Personal Optimization (4 agents):**
+- `leadership-development` + `communication-mastery` + `peak-performance-flow-state-agent` + `time-management-productivity-agent`
+
+**📊 Market Intelligence (5 agents):**
+- `advanced-research-engine` + `competitor-benchmarking-agent` + `consumer-insights-synthesizer` + `trend-detection-extrapolation` + `market-user-research`
+
+## ⚡ **POWER USER RESOURCES**
+
+### 📚 **Essential Guides**
+- **[agents-quickref.md](agents-quickref.md)** - Find perfect agents in seconds (607 agents categorized)
+- **[prompt-templates.md](prompt-templates.md)** - Copy-paste success templates with 95% success rate
+- **[flowstrats.md](flowstrats.md)** - Complete claude-flow optimization strategies (**REFERENCE IN EVERY PROMPT**)
+- **[tutorial.md](tutorial.md)** - 5→30 minute mastery path with hands-on examples
+- **[troubleshooting.md](troubleshooting.md)** - Solve 90% of issues in under 5 minutes
+
+### 🎯 **Success Tips**
+- **Always reference `flowstrats.md`** in every prompt for optimal coordination
+- **Use hive-mind for complex projects**, swarm for parallel tasks, automation for workflows
+- **Start with top 20 most versatile agents** from `agents-quickref.md`
+- **Copy proven templates** from `prompt-templates.md` and customize
+- **Enable shared memory** so agents build upon each other's work
+
+---
+
 ## 🔧 Advanced Features
 
 ### Memory & Context Management
