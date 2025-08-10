@@ -40,24 +40,14 @@ tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch, Tas
 
 #### **YAML Frontmatter Requirements**
 
-**Required Fields:**
+**The ONLY Three Fields:**
 ```yaml
 name: kebab-case-agent-name              # REQUIRED - Unique identifier
-description: "Specific use case trigger"  # REQUIRED - When to use this agent
-tools: [tool1, tool2, tool3]            # REQUIRED - Available tools list
+description: "Specific use case trigger"  # REQUIRED - When Claude should invoke this agent
+tools: [tool1, tool2, tool3]            # REQUIRED - Available tools (inherits all if omitted)
 ```
 
-**Optional Enhancement Fields:**
-```yaml
-expertise_level: [beginner|intermediate|advanced|expert|legendary]
-domain_focus: primary_domain_name
-sub_domains: [subdomain1, subdomain2, subdomain3]
-integration_points: [system1, system2, api3]
-success_criteria: [metric1_target, metric2_target, outcome3]
-priority: [low|medium|high|critical]
-environment: [dev|staging|production|all]
-team: [frontend|backend|fullstack|devops|data]
-```
+**That's it. Nothing else goes in the YAML frontmatter.**
 
 ---
 
@@ -72,11 +62,6 @@ Based on analysis of 607+ existing agents, here are the proven patterns:
 name: advanced-research-engine
 description: Ultra-specialized research orchestration system combining deep synthesis, iterative validation, and recursive exploration with advanced 2025 research methodologies
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch, Task, TodoWrite]
-expertise_level: expert
-domain_focus: research_orchestration
-sub_domains: [multi_dimensional_synthesis, iterative_methodology, recursive_validation, advanced_search_strategies]
-integration_points: [search_engines, embedding_models, knowledge_graphs, nlp_tools, visualization_platforms]
-success_criteria: [85% coverage score, 80% depth index, 95% validation rate, 90% synthesis quality, real-time knowledge integration]
 ---
 
 # Principle 0: Radical Candor—Truth Above All
@@ -118,11 +103,6 @@ tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash]
 name: business-growth-scaling-agent
 description: Expert in systematically scaling businesses from startup to enterprise using data-driven growth strategies, operational excellence frameworks, and AI-powered optimization to achieve 10x growth while maintaining quality and culture
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, WebSearch, WebFetch, Task, TodoWrite, Bash]
-expertise_level: expert
-domain_focus: business_scaling
-sub_domains: [growth_strategy, operations_scaling, team_building, systems_optimization, market_expansion]
-integration_points: [erp_systems, crm_platforms, analytics_tools, automation_platforms, financial_systems]
-success_criteria: [revenue_growth_200_percent_plus_annually, operational_efficiency_improvements_40_percent_plus, team_scaling_without_culture_degradation, market_expansion_3_plus_new_segments, sustainable_profit_margins_over_20_percent]
 ---
 ```
 
@@ -310,11 +290,6 @@ Continuous Improvement
 name: [technology]-specialist
 description: Ultra-specialized [TECHNOLOGY] development expert with comprehensive knowledge of 2025 ecosystem, advanced [SPECIFIC_FEATURES], modern [PATTERNS], and production deployment strategies. Master of performance optimization and enterprise development.
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash]
-expertise_level: expert
-domain_focus: [technology]_development
-sub_domains: [core_features, advanced_patterns, performance_optimization, testing_strategies]
-integration_points: [development_tools, deployment_platforms, monitoring_systems]
-success_criteria: [code_quality_95_percent_plus, performance_benchmarks_met, zero_critical_vulnerabilities]
 ---
 
 Principle 0: Radical Candor—Truth Above All
@@ -347,11 +322,6 @@ Always write production-ready code that leverages the full power of [TECHNOLOGY]
 name: [business-function]-agent
 description: Expert in [BUSINESS_DOMAIN] using data-driven strategies, operational excellence frameworks, and AI-powered optimization to achieve [SPECIFIC_GOALS] while maintaining quality and sustainable growth
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, WebSearch, WebFetch, Task, TodoWrite, Bash]
-expertise_level: expert
-domain_focus: [business_domain]
-sub_domains: [strategy_formulation, process_optimization, performance_measurement, stakeholder_management]
-integration_points: [crm_systems, analytics_platforms, automation_tools, reporting_systems]
-success_criteria: [kpi_improvement_targets, efficiency_gains, stakeholder_satisfaction_scores]
 ---
 
 Principle 0: Radical Candor—Truth Above All
@@ -385,11 +355,6 @@ Principle 0: Radical Candor—Truth Above All
 name: [ai-capability]-agent
 description: Advanced AI/ML specialist focused on [SPECIFIC_AI_DOMAIN] with expertise in [ML_FRAMEWORKS], model development, deployment, and optimization. Specializes in production-ready machine learning solutions with enterprise-grade performance.
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch]
-expertise_level: expert
-domain_focus: [ai_ml_domain]
-sub_domains: [model_development, data_processing, deployment_optimization, performance_monitoring]
-integration_points: [ml_platforms, data_pipelines, serving_infrastructure, monitoring_tools]
-success_criteria: [model_accuracy_targets, inference_latency_requirements, deployment_success_rates]
 ---
 
 Principle 0: Radical Candor—Truth Above All
@@ -485,22 +450,22 @@ tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch, Tas
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash]  # Only what's actually needed
 ```
 
-#### **Principle 3: Success Criteria Definition**
+#### **Principle 3: Clear Agent Purpose**
 ```yaml
-# ❌ WRONG - Vague Success Metrics
-success_criteria: [good_code, fast_performance, user_satisfaction]
+# ❌ WRONG - Vague Description
+description: "Helps with programming tasks"
 
-# ✅ CORRECT - Quantified Success Metrics
-success_criteria: [99.8_percent_success_rate, 12x_speed_improvement, 98_quality_score, zero_critical_vulnerabilities]
+# ✅ CORRECT - Specific Trigger Description
+description: "React 19+ expert for Server Components, Concurrent Features, and modern testing patterns with Vitest"
 ```
 
-#### **Principle 4: Domain Expertise Depth**
+#### **Principle 4: Tool Selection**
 ```yaml
-# ❌ WRONG - Surface-Level Knowledge
-sub_domains: [coding, testing, deployment]
+# ❌ WRONG - Kitchen Sink Approach
+tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch, Task, TodoWrite, NotebookEdit, etc...]
 
-# ✅ CORRECT - Deep Expertise Areas  
-sub_domains: [server_components_architecture, concurrent_features_optimization, advanced_state_management, performance_profiling_optimization]
+# ✅ CORRECT - Only Required Tools  
+tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash]
 ```
 
 ### **⚡ Performance Benchmarks by Agent Type**
@@ -539,40 +504,31 @@ Target Metrics:
 
 ## 🏗️ **ENTERPRISE INTEGRATION PATTERNS**
 
-### **🔗 System Integration Templates**
+### **🔗 Integration Considerations**
 
-#### **Enterprise Software Integration**
-```yaml
-integration_points: [
-  crm_platforms: [salesforce, hubspot, pipedrive],
-  erp_systems: [sap, netsuite, oracle],
-  analytics_tools: [tableau, powerbi, looker],
-  automation_platforms: [zapier, microsoft_power_automate],
-  cloud_services: [aws, azure, gcp]
-]
-```
+#### **Enterprise Software Systems**
+When building agents for enterprise environments, consider integration with:
+- CRM platforms (Salesforce, HubSpot, Pipedrive)
+- ERP systems (SAP, NetSuite, Oracle)
+- Analytics tools (Tableau, PowerBI, Looker)
+- Automation platforms (Zapier, Microsoft Power Automate)
+- Cloud services (AWS, Azure, GCP)
 
-#### **Development Environment Integration**
-```yaml
-integration_points: [
-  version_control: [git, github, gitlab],
-  ci_cd_platforms: [github_actions, jenkins, gitlab_ci],
-  container_platforms: [docker, kubernetes, openshift],
-  monitoring_tools: [prometheus, grafana, datadog],
-  code_quality: [sonarqube, codeclimate, veracode]
-]
-```
+#### **Development Environment Tools**
+Development agents should consider:
+- Version control (Git, GitHub, GitLab)
+- CI/CD platforms (GitHub Actions, Jenkins, GitLab CI)
+- Container platforms (Docker, Kubernetes, OpenShift)
+- Monitoring tools (Prometheus, Grafana, Datadog)
+- Code quality tools (SonarQube, CodeClimate, Veracode)
 
-#### **Data Platform Integration**
-```yaml
-integration_points: [
-  databases: [postgresql, mongodb, redis, elasticsearch],
-  data_pipelines: [airflow, luigi, dagster],
-  ml_platforms: [mlflow, kubeflow, sagemaker],
-  visualization: [grafana, tableau, power_bi],
-  streaming: [kafka, pulsar, kinesis]
-]
-```
+#### **Data Platform Technologies**
+Data-focused agents should understand:
+- Databases (PostgreSQL, MongoDB, Redis, Elasticsearch)
+- Data pipelines (Airflow, Luigi, Dagster)
+- ML platforms (MLFlow, Kubeflow, SageMaker)
+- Visualization tools (Grafana, Tableau, Power BI)
+- Streaming platforms (Kafka, Pulsar, Kinesis)
 
 ---
 
@@ -739,7 +695,6 @@ Features:
 name: multi-modal-specialist
 description: Advanced agent combining text, code, data analysis, and web research capabilities for comprehensive problem solving across multiple domains
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash, WebSearch, WebFetch, Task, TodoWrite]
-capabilities: [text_analysis, code_generation, data_processing, web_research, system_integration]
 ---
 ```
 
@@ -747,9 +702,8 @@ capabilities: [text_analysis, code_generation, data_processing, web_research, sy
 ```yaml
 ---
 name: adaptive-learning-agent
-description: Self-improving agent that learns from interactions, adapts strategies based on success patterns, and evolves capabilities over time
-learning_mechanisms: [pattern_recognition, feedback_integration, strategy_adaptation, performance_optimization]
-adaptation_triggers: [performance_thresholds, user_feedback, environmental_changes, new_requirements]
+description: Self-improving agent that learns from interactions, adapts strategies based on success patterns, and evolves capabilities over time through feedback integration and performance optimization
+tools: [Read, Write, Edit, MultiEdit, Grep, Glob, WebSearch, WebFetch, Task]
 ---
 ```
 
@@ -757,9 +711,8 @@ adaptation_triggers: [performance_thresholds, user_feedback, environmental_chang
 ```yaml
 ---
 name: collaborative-team-agent
-description: Specialized agent designed for multi-agent coordination, task delegation, and team-based problem solving with other agents
-coordination_capabilities: [task_decomposition, agent_delegation, result_synthesis, conflict_resolution]
-collaboration_protocols: [communication_standards, data_sharing, quality_assurance, performance_monitoring]
+description: Specialized agent designed for multi-agent coordination, task delegation, and team-based problem solving with other agents through task decomposition and result synthesis
+tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Task, TodoWrite]
 ---
 ```
 
@@ -796,14 +749,12 @@ collaboration_protocols: [communication_standards, data_sharing, quality_assuran
 
 #### **YAML Configuration**
 ```yaml
-✅ Always include required fields: name, description, tools
-✅ Use kebab-case for agent names
+✅ Always include ALL three fields: name, description, tools
+✅ Use kebab-case for agent names (lowercase-with-hyphens)
 ✅ Write specific, trigger-focused descriptions  
 ✅ Include only necessary tools to avoid bloat
-✅ Add expertise_level for complex agents
-✅ Define quantified success_criteria
-✅ Specify relevant sub_domains for depth
-✅ List actual integration_points
+✅ Keep YAML simple - just the 3 fields
+✅ No extra metadata or documentation fields
 ```
 
 #### **Prompt Engineering**
@@ -834,13 +785,13 @@ collaboration_protocols: [communication_standards, data_sharing, quality_assuran
 
 #### **YAML Anti-Patterns**
 ```yaml
-❌ Missing required fields (name, description, tools)
+❌ Missing any of the 3 required fields
 ❌ Using spaces or special characters in agent names
 ❌ Vague, generic descriptions that don't specify use cases
 ❌ Including unnecessary tools that won't be used
-❌ Undefined or unmeasurable success criteria
-❌ Generic sub_domains without specific expertise
-❌ Listing non-existent or inaccessible integration points
+❌ Adding extra fields beyond name, description, tools
+❌ Using CamelCase or snake_case instead of kebab-case
+❌ Overly complex tool lists when simple ones suffice
 ```
 
 #### **Prompt Anti-Patterns**
@@ -891,10 +842,6 @@ cp templates/ai-ml-agent-template.md my-ai-agent.md
 name: my-specialized-agent                     # Replace with your agent name
 description: Specific use case and trigger     # Replace with your specific description
 tools: [Read, Write, Edit, MultiEdit, Grep, Glob, Bash]  # Adjust tools as needed
-expertise_level: expert                        # Set appropriate level
-domain_focus: your_domain                      # Replace with your domain
-sub_domains: [skill1, skill2, skill3]         # List specific skills
-success_criteria: [metric1, metric2, metric3] # Define success metrics
 ---
 ```
 
